@@ -1,0 +1,16 @@
+<Application
+    xmlns="https://github.com/avaloniaui"
+    xmlns:local="using:OxyPlotNreExample"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="OxyPlotNreExample.App">
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme Mode="Light" />
+        <StyleInclude Source="resm:OxyPlot.Avalonia.Themes.Default.xaml?assembly=OxyPlot.Avalonia" />
+    </Application.Styles>
+
+</Application>
