@@ -39,8 +39,6 @@ public class MainWindowViewModel : ViewModelBase
         StrokeThickness = 2,
     };
 
-    private readonly object _lock = new();
-
     public MainWindowViewModel()
     {
         Model.Axes.Add(XAxis);
@@ -64,14 +62,16 @@ public class MainWindowViewModel : ViewModelBase
     {
         while (true)
         {
-            lock (_lock)
+            lock (Model.SyncRoot)
             {
                 Model.Annotations.Clear();
-                Model.Annotations.Add(new TextAnnotation
+                TextAnnotation a = new()
                 {
                     Text = "idk",
                     TextPosition = new(50, 50),
-                });
+                };
+                Model.Annotations.Add(a);
+                // a.EnsureAxes(); <-- this vastly lowers the frequency of the issue
             }
 
             Exception? ex = Model.GetLastPlotException();

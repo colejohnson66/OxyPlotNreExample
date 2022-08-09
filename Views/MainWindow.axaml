@@ -8,7 +8,6 @@
     mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
     x:Class="OxyPlotNreExample.Views.MainWindow"
     Height="300"
-    Icon="/Assets/avalonia-logo.ico"
     Title="OxyPlot NRE Example"
     Width="400">
 
